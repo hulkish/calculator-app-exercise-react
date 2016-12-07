@@ -1,0 +1,98 @@
+:global {
+  body,
+  html {
+    max-height: 100%;
+    background-color: $color-background-default;
+    color: $color-text-default;
+  }
+
+  body,
+  button,
+  input {
+    font-family: Roboto;
+  }
+
+  button,
+  input {
+    font-size: 100%;
+    cursor: pointer;
+    outline: 0;
+
+    &[disabled] {
+      cursor: not-allowed;
+      text-shadow: 0 -1px 1px #ebebeb;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+      box-shadow: inset -2px -2px 2px rgba(200,200,200, 0.2), inset 2px 2px 2px rgba(50, 50, 50, 0.2);
+    }
+  }
+
+  .container {
+    max-width: 720px;
+    margin: auto;
+  }
+
+  .button {
+    border: none;
+    border-radius: 0;
+    flex: 1 0 24%;
+    font-weight: 700;
+    font-size: 1.6em;
+    line-height: 1.6em;
+    margin: 1px;
+
+    &:active {
+      box-shadow: inset -2px -2px 2px rgba(200,200,200, 0.2), inset 2px 2px 2px rgba(50, 50, 50, 0.2);
+    }
+
+    &[disabled] {
+      opacity: 0.8;
+    }
+
+    &.is-numeric {
+      background-color: $color-numeric-btn;
+
+      &[disabled] {
+        background-color: darken($color-numeric-btn, 15%);
+        color: lighten($color-numeric-btn, 5%);
+      }
+
+      &:hover:not([disabled]) {
+        background-color: darken($color-numeric-btn, 10%);
+      }
+    }
+
+    &.is-operator {
+      background-color: $color-operator-btn;
+
+      &[disabled] {
+        background-color: darken($color-operator-btn, 10%);
+        color: lighten($color-operator-btn, 5%);
+      }
+
+      &:hover:not([disabled]) {
+        background-color: lighten($color-operator-btn, 10%);
+      }
+    }
+
+    &.is-large {
+      flex-basis: 49%;
+    }
+  }
+
+  .is-center {
+    margin: 0 auto;
+  }
+
+  .is-text-center {
+    text-align: center;
+  }
+
+  .header {
+    margin-top: 100px;
+    padding: 20px;
+  }
+
+  .title {
+    font-weight: 300;
+  }
+}
